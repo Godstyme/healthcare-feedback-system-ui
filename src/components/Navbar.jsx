@@ -11,9 +11,9 @@ function Header() {
          {/* Main Navbar */}
          <nav className="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
             <div className="container-fluid px-4">
-               <a className="navbar-brand fw-bold" href="#">
-                  <img src={brand} alt="HFS" width="93" height="34"/>
-               </a>
+               <Link to="/" className="navbar-brand fw-bold">
+                  <img src={brand} alt="HFS" width="93" height="34" />
+               </Link>     
                <button
                   className="navbar-toggler"
                   type="button"
@@ -29,9 +29,9 @@ function Header() {
                <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                   <ul className="navbar-nav mb-2 mb-lg-0">
                      <li className="nav-item">
-                        <a className="nav-link active text-white" aria-current="page" href="#">
+                        <Link to="/" className="nav-link active text-white" aria-current="page">
                            Home
-                        </a>
+                        </Link>
                      </li>
                      <li className="nav-item">
                         <a className="nav-link text-white" href="#">
@@ -42,9 +42,7 @@ function Header() {
                         <Link to="/login" className="nav-link text-white">Login</Link>
                      </li>
                      <li className="nav-item">
-                        <a className="nav-link text-white" href="#">
-                           Register
-                        </a>
+                        <Link to="/register" className="nav-link text-white">Register</Link>
                      </li>
                   </ul>
                </div>
