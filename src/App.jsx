@@ -7,6 +7,11 @@ import Footer from "./components/Footer";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 
+
+import UserDashboard from "./components/pages/Dashboard/User/UserDashboard";
+import Profile from "./components/pages/Dashboard/User/Profile";
+import Feedbacks from "./components/pages/Dashboard/User/Feedbacks";
+
 function App() {
   useEffect(() => {
     import('bootstrap/dist/js/bootstrap.bundle.min.js');
@@ -16,13 +21,43 @@ function App() {
   return (
     <>
       <Router>
-        <Navbar />
         <Routes>
-          <Route path="/" element={<Hero />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+          <Route
+            path="/"
+            element={
+              <>
+                <Navbar />
+                <Hero />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <>
+                <Navbar />
+                <Login />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/register"
+            element={
+              <>
+                <Navbar />
+                <Register />
+                <Footer />
+              </>
+            }
+          />
+
+          {/* User Dashboard */}
+          <Route path="/user/dashboard" element={<UserDashboard />} />
+          <Route path="/user/profile" element={<Profile />} />
+          <Route path="/user/feedbacks" element={<Feedbacks />} />
         </Routes>
-        <Footer />
       </Router>
     </>
   )
