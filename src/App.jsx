@@ -1,5 +1,10 @@
 import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css'
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Footer from "./components/Footer";
+import Login from "./components/auth/Login";
 
 function App() {
   useEffect(() => {
@@ -9,14 +14,14 @@ function App() {
 
   return (
     <>
-      <div>
-       
-      </div>
-      
-      <div className="text-center bg-primary text-white p-5">
-        <h1>Hello Feedback System!</h1>
-      </div>
-
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Hero />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+        <Footer />
+      </Router>
     </>
   )
 }

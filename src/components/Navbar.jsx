@@ -1,5 +1,9 @@
 import React from 'react';
 import brand from '../assets/favicons/brand.svg'
+import { Link } from 'react-router-dom';
+
+
+
 function Header() {
 
    return (
@@ -35,9 +39,7 @@ function Header() {
                         </a>
                      </li>
                      <li className="nav-item">
-                        <a className="nav-link text-white" href="#">
-                           Login
-                        </a>
+                        <Link to="/login" className="nav-link text-white">Login</Link>
                      </li>
                      <li className="nav-item">
                         <a className="nav-link text-white" href="#">
