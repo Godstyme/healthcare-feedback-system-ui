@@ -1,0 +1,158 @@
+/* Reset */
+* {
+   box-sizing: border-box;
+}
+
+body,
+html {
+   margin: 0;
+   padding: 0;
+   height: 100%;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Container spanning full viewport width and height */
+.login-container {
+   display: flex;
+   height: 100vh;
+   width: 100vw;
+   background-color: #f4f6f8;
+   overflow-x: hidden;
+}
+
+/* Left panel */
+.login-left {
+   flex: 1;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background: white;
+   padding: 4rem 6rem;
+   box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+   max-width: 700px;
+   box-sizing: border-box;
+}
+
+/* Login form inside left panel */
+.login-form {
+   width: 100%;
+   max-width: 420px;
+}
+
+.login-form h2 {
+   color: #0052cc;
+   margin-bottom: 1.5rem;
+   font-weight: 700;
+   font-size: 1.8rem;
+}
+
+.login-form label {
+   font-weight: 600;
+   margin-bottom: 0.5rem;
+   display: block;
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"] {
+   width: 100%;
+   padding: 0.6rem 1rem;
+   margin-bottom: 1.5rem;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   font-size: 1rem;
+   transition: border-color 0.3s ease;
+}
+
+.login-form input[type="email"]:focus,
+.login-form input[type="password"]:focus {
+   outline: none;
+   border-color: #0052cc;
+}
+
+.password-wrapper {
+   position: relative;
+}
+
+.password-wrapper button {
+   position: absolute;
+   right: 5px;
+   top: 50%;
+   transform: translateY(-50%);
+   padding: 0.4rem 0.8rem;
+   border: none;
+   background-color: #ddd;
+   font-weight: 700;
+   color: #555;
+   border-radius: 4px;
+   cursor: pointer;
+   user-select: none;
+   transition: background-color 0.3s ease;
+}
+
+.password-wrapper button:hover {
+   background-color: #bbb;
+}
+
+.login-form button[type="submit"] {
+   width: 100%;
+   padding: 0.8rem 1rem;
+   background-color: #0052cc;
+   color: white;
+   border: none;
+   border-radius: 6px;
+   font-weight: 700;
+   font-size: 1.1rem;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+}
+
+.login-form button[type="submit"]:hover {
+   background-color: #003d99;
+}
+
+.signup-text {
+   text-align: center;
+   margin-top: 1rem;
+   font-size: 0.9rem;
+}
+
+.signup-text a {
+   color: #0052cc;
+   font-weight: 700;
+   text-decoration: none;
+}
+
+.signup-text a:hover {
+   text-decoration: underline;
+}
+
+/* Right panel */
+.login-right {
+   flex: 1;
+   color: white;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 4rem 6rem;
+   background: url('your-image.jpg') no-repeat center center/cover;
+   box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.3);
+   text-align: center;
+   min-width: 600px;
+   box-sizing: border-box;
+}
+
+.login-right h1 {
+   font-size: 2.4rem;
+   font-weight: 900;
+   margin-bottom: 1rem;
+   text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+   line-height: 1.2;
+}
+
+.login-right p {
+   font-size: 1.1rem;
+   line-height: 1.6;
+   max-width: 380px;
+   margin: 0 auto;
+   text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+}
