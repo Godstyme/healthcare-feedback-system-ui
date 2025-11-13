@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import loginBg from '../../assets/imgs/register_bg.avif';
+import loginBg from  '../../assets/imgs/register_bg.avif';
 import './Register.css';
 import { Link } from 'react-router-dom';
 
@@ -63,7 +63,7 @@ export default function RegistrationPage() {
                <button type="submit" className="register-button">Register</button>
 
                <p className="signin-text">
-                  Already have an account? <Link to="/Login">Login</Link>
+                  Already have an account? <Link to="/">Sign in</Link>
                </p>
             </form>
          </div>
