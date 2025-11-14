@@ -1,14 +1,17 @@
 import React from "react";
 import Sidebar from "../../Sidebar";
 import Topbar from "../../Topbar";
+import "./UserLayout.css";
 
 const UserLayout = ({ children }) => {
    return (
       <div className="d-flex">
          <Sidebar />
-         <div className="flex-grow-1" style={{ marginLeft: "240px" }}>
+
+         {/* Main content */}
+         <div className="main-content flex-grow-1">
             <Topbar />
-            <main className="p-4 bg-light min-vh-100">{children}</main>
+            <div className="content-wrapper p-3">{children}</div>
          </div>
       </div>
    );
