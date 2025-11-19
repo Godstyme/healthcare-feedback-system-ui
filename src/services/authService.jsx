@@ -14,10 +14,26 @@ class AuthService {
       return response.data;
    }
 
+   // async logout() {
+   //    const response = await api.post("/auth/logout");
+   //    return response.data;
+   // }
    async logout() {
-      const response = await api.post("/auth/logout");
+      const token = localStorage.getItem("access_token");
+
+      const response = await api.post(
+         "/auth/logout",
+         {},
+         {
+            headers: {
+               Authorization: `Bearer ${token}`,
+            },
+         }
+      );
+
       return response.data;
    }
+
 }
 
 export default new AuthService();

@@ -13,13 +13,15 @@ const Sidebar = () => {
    const handleLogout = async () => {
       try {
          const res = await authService.logout();
-         console.log("Logged out:", res);
+         console.log(res);
 
-         localStorage.removeItem("token");
+         localStorage.removeItem("access_token");
+         localStorage.removeItem("user_id");
 
          window.location.href = "/login";
-      } catch (error) {
-         console.error("Logout failed:", error);
+
+      } catch (err) {
+         console.error("Logout failed:", err);
       }
    };
 
