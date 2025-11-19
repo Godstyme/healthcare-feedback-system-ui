@@ -1,12 +1,16 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import './App.css'
+import './App.css';
+
+import ProtectedRoute from "./components/ProtectedRoute";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Footer from "./components/Footer";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import UserDashboard from "./components/pages/Dashboard/User/UserDashboard";
 import Profile from "./components/pages/Dashboard/User/Profile";
@@ -17,11 +21,13 @@ function App() {
     import('bootstrap/dist/js/bootstrap.bundle.min.js');
   }, []);
 
-
   return (
     <>
+      <ToastContainer position="top-right" autoClose={3000} />
+
       <Router>
         <Routes>
+
           <Route
             path="/"
             element={
@@ -32,6 +38,7 @@ function App() {
               </>
             }
           />
+
           <Route
             path="/login"
             element={
@@ -42,6 +49,7 @@ function App() {
               </>
             }
           />
+
           <Route
             path="/register"
             element={
@@ -53,14 +61,38 @@ function App() {
             }
           />
 
-          {/* User Dashboard */}
-          <Route path="/user/dashboard" element={<UserDashboard />} />
-          <Route path="/user/profile" element={<Profile />} />
-          <Route path="/user/feedbacks" element={<Feedbacks />} />
+
+          <Route
+            path="/user/dashboard"
+            element={
+              <ProtectedRoute>
+                <UserDashboard />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/user/profile"
+            element={
+              <ProtectedRoute>
+                <Profile />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/user/feedbacks"
+            element={
+              <ProtectedRoute>
+                <Feedbacks />
+              </ProtectedRoute>
+            }
+          />
+
         </Routes>
       </Router>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
