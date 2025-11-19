@@ -1,15 +1,12 @@
 import React from "react";
-import { FaUserCircle, FaBell } from "react-icons/fa";
+import { FaUserCircle, FaBell, FaSignOutAlt, FaUser } from "react-icons/fa";
 
 const Topbar = () => {
    return (
       <nav className="navbar navbar-light bg-light shadow-sm px-4 d-flex justify-content-between">
-         {/* Title */}
          <span className="navbar-brand mb-0 h5">Dashboard</span>
 
          <div className="d-flex align-items-center gap-3">
-
-            {/* Notifications Dropdown */}
             <div className="dropdown">
                <button
                   className="btn position-relative"
@@ -37,7 +34,6 @@ const Topbar = () => {
                </ul>
             </div>
 
-            {/* User Dropdown */}
             <div className="dropdown">
                <button
                   className="btn d-flex align-items-center gap-2"
@@ -46,14 +42,14 @@ const Topbar = () => {
                   aria-expanded="false"
                   style={{ border: "none", background: "transparent" }}
                >
-                  <FaUserCircle size={32} className="text-primary" />
+                  <FaUserCircle size={32} style={{ color: "#2e1645" }} />
                   <span className="fw-semibold d-none d-md-inline">Godstime</span>
                </button>
 
                <ul className="dropdown-menu dropdown-menu-end shadow">
-                  <li><a className="dropdown-item" href="/user/profile">Profile</a></li>
+                  <li><a className="dropdown-item" href="/user/profile"> <FaUser className="me-2" />  Profile</a></li>
                   <li><hr className="dropdown-divider" /></li>
-                  <li><button className="dropdown-item text-danger">Logout</button></li>
+                  <li><button className="dropdown-item text-danger"> <FaSignOutAlt className="me-2" /> Logout</button></li>
                </ul>
             </div>
 

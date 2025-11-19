@@ -7,8 +7,6 @@ const UserLayout = ({ children }) => {
    return (
       <div className="d-flex">
          <Sidebar />
-
-         {/* Main content */}
          <div className="main-content flex-grow-1">
             <Topbar />
             <div className="content-wrapper p-3">{children}</div>

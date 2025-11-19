@@ -11,19 +11,15 @@ const Sidebar = () => {
 
    return (
       <>
-         {/* Mobile toggle button */}
-         <button className="btn btn-primary d-lg-none toggle-sidebar-btn" onClick={toggleSidebar}>
+         <button className="btn d-lg-none toggle-sidebar-btn" onClick={toggleSidebar} style={{ backgroundColor: "#2e1645", color: "#fff" }}>
             <FaBars />
          </button>
-
-         {/* Overlay (mobile only) */}
          {isOpen && <div className="sidebar-overlay d-lg-none" onClick={closeSidebar}></div>}
 
-         {/* Sidebar */}
          <div className={`sidebar ${isOpen ? "open" : ""}`}>
             <div className="sidebar-header">
-               <h4 className="text-white mb-3">User Panel</h4>
-               <button className="toggle-btn d-lg-none" onClick={closeSidebar}>✖</button>
+               <h4 className="text-white mb-3 px-2 me-2">User Panel</h4>
+               <button className="toggle-btn d-lg-none text-danger" onClick={closeSidebar}>&#10006;</button>
             </div>
 
             <ul className="list-unstyled px-2">

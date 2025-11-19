@@ -42,22 +42,17 @@ const Profile = () => (
                   <div className="card-body">
                      <form>
                         <div className="row">
-                           <div className="col-md-6 mb-3">
-                              <label className="form-label">First Name</label>
-                              <input type="text" className="form-control" placeholder="Enter first name" />
+                           <div className="col-12 mb-3">
+                              <label className="form-label">Full Name</label>
+                              <input type="text" className="form-control" placeholder="Enter full name" />
                            </div>
 
-                           <div className="col-md-6 mb-3">
-                              <label className="form-label">Last Name</label>
-                              <input type="text" className="form-control" placeholder="Enter last name" />
-                           </div>
-
-                           <div className="col-md-6 mb-3">
+                           <div className="col-12 mb-3">
                               <label className="form-label">Email</label>
-                              <input type="email" className="form-control" placeholder="Enter email" />
+                              <input type="email" className="form-control" placeholder="Enter email" readOnly/>
                            </div>
 
-                           <div className="col-md-6 mb-3">
+                           <div className="col-12 mb-3">
                               <label className="form-label">Phone</label>
                               <input type="text" className="form-control" placeholder="Enter phone number" />
                            </div>
@@ -69,7 +64,7 @@ const Profile = () => (
                         </div>
 
                         <div className="text-end">
-                           <button type="submit" className="btn btn-primary px-4">
+                           <button type="submit" className="btn text-light px-4" style={{ backgroundColor: "#687dff"}}>
                               Save Changes
                            </button>
                         </div>
@@ -102,7 +97,7 @@ const Profile = () => (
                         </div>
 
                         <div className="text-end">
-                           <button type="submit" className="btn btn-dark px-4">
+                           <button type="submit" className="btn px-4" style={{ backgroundColor: "#687dff", color: "#fff" }}>
                               Update Password
                            </button>
                         </div>
