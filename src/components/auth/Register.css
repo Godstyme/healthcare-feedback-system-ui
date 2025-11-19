@@ -1,0 +1,118 @@
+.registration-container {
+   display: flex;
+   height: 100vh;
+   width: 100vw;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.registration-left {
+   flex: 1;
+   max-width: 700px;
+   background-color: white;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 4rem;
+   box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+.registration-form {
+   width: 100%;
+   max-width: 400px;
+}
+
+.registration-form h2 {
+   color: #0052cc;
+   margin-bottom: 1.5rem;
+   font-weight: 700;
+   font-size: 1.8rem;
+}
+
+.registration-form label {
+   display: block;
+   font-weight: 600;
+   margin-bottom: 0.5rem;
+}
+
+.registration-form input {
+   width: 100%;
+   padding: 0.6rem 1rem;
+   margin-bottom: 1.5rem;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   font-size: 1rem;
+   transition: border-color 0.3s ease;
+}
+
+.password-wrapper {
+   position: relative;
+}
+
+.show-password-btn {
+   position: absolute;
+   right: 5px;
+   top: 50%;
+   transform: translateY(-50%);
+   padding: 0.4rem 0.8rem;
+   border: none;
+   background-color: #ddd;
+   border-radius: 4px;
+   cursor: pointer;
+}
+
+.register-button {
+   width: 100%;
+   padding: 0.8rem 1rem;
+   background-color: #0052cc;
+   color: white;
+   border: none;
+   border-radius: 6px;
+   font-weight: 700;
+   font-size: 1.1rem;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+}
+
+.register-button:hover {
+   background-color: #003d99;
+}
+
+.signin-text {
+   text-align: center;
+   margin-top: 1rem;
+   font-size: 0.9rem;
+}
+
+.signin-text a {
+   color: #0052cc;
+   font-weight: 700;
+   text-decoration: none;
+}
+
+/* Right panel */
+.registration-right {
+   flex: 1;
+   min-width: 600px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   color: white;
+   text-align: center;
+   padding: 4rem;
+}
+
+.registration-right-content h2 {
+   font-size: 2.2rem;
+   font-weight: 900;
+   margin-bottom: 1rem;
+   line-height: 1.2;
+   text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+}
+
+.registration-right-content p {
+   font-size: 1.1rem;
+   line-height: 1.6;
+   max-width: 400px;
+   margin: 0 auto;
+   text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+}
