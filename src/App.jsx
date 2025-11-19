@@ -8,6 +8,7 @@ import Hero from "./components/Hero";
 import Footer from "./components/Footer";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
+import CookieConsent from "./components/CookieConsent";
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -32,6 +33,7 @@ function App() {
             path="/"
             element={
               <>
+                <CookieConsent />
                 <Navbar />
                 <Hero />
                 <Footer />
