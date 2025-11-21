@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaBars, FaUser, FaHome, FaCog, FaCommentDots, FaSignOutAlt } from "react-icons/fa";
+import { FaBars, FaUser, FaHome, FaCog, FaCommentDots, FaSignOutAlt, FaCalendarAlt } from "react-icons/fa";
 import authService from "../services/authService";
 import "./Sidebar.css";
 
@@ -49,6 +49,11 @@ const Sidebar = () => {
                <li>
                   <Link to="/user/dashboard" className="sidebar-link">
                      <FaHome className="me-2" /> Dashboard
+                  </Link>
+               </li>
+               <li>
+                  <Link to="" className="sidebar-link">
+                     <FaCalendarAlt className="me-2" /> Appointments
                   </Link>
                </li>
                <li>
