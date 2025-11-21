@@ -16,6 +16,14 @@ import "react-toastify/dist/ReactToastify.css";
 import UserDashboard from "./components/pages/Dashboard/User/UserDashboard";
 import Profile from "./components/pages/Dashboard/User/Profile";
 import Feedbacks from "./components/pages/Dashboard/User/Feedbacks";
+//admin @system.com
+
+// admin imports can go here when needed
+import AdminDashboard from "./components/pages/Dashboard/Admin/AdminDashboard";
+import ManageUsers from "./components/pages/Dashboard/Admin/ManageUsers";
+import Analytics from "./components/pages/Dashboard/Admin/Analytics";
+import ManageFeedbacks from "./components/pages/Dashboard/Admin/ManageFeedbacks";
+
 
 function App() {
   useEffect(() => {
@@ -91,6 +99,42 @@ function App() {
             }
           />
 
+
+          <Route
+            path="/admin/dashboard"
+            element={
+              <ProtectedRoute adminOnly={true}>
+                <AdminDashboard />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/admin/users"
+            element={
+              <ProtectedRoute adminOnly={true}>
+                <ManageUsers />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/admin/feedbacks"
+            element={
+              <ProtectedRoute adminOnly={true}>
+                <ManageFeedbacks />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/admin/analytics"
+            element={
+              <ProtectedRoute adminOnly={true}>
+                <Analytics />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </Router>
     </>

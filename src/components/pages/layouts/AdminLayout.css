@@ -1,0 +1,17 @@
+.admin-main {
+   width: 100%;
+   min-height: 100vh;
+   background: #f4f6fb;
+   transition: margin-left 0.3s;
+}
+
+@media (min-width: 992px) {
+   .admin-main {
+      margin-left: 260px;
+   }
+}
+
+.admin-content {
+   max-width: 1200px;
+   margin: 0 auto;
+}

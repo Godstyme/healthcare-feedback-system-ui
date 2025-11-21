@@ -1,0 +1,293 @@
+/*.modern-modal-overlay {
+   position: fixed;
+   inset: 0;
+   background: rgba(0, 0, 0, 0.45);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   animation: fadeIn 0.25s ease-in-out;
+   z-index: 2000;
+}
+
+.modern-modal {
+   background: white;
+   width: 700px;
+   max-width: 95%;
+   border-radius: 10px;
+   overflow: hidden;
+   animation: scaleIn 0.25s ease;
+}
+
+.modern-modal-header,
+.modern-modal-footer {
+   padding: 15px;
+   border-bottom: 1px solid #eee;
+}
+
+.modern-modal-footer {
+   border-top: 1px solid #eee;
+   display: flex;
+   justify-content: flex-end;
+   gap: 10px;
+}
+
+.btn-close-custom {
+   background: none;
+   border: none;
+   font-size: 20px;
+}
+
+.modern-modal-body {
+   padding: 20px;
+   max-height: 70vh;
+   overflow-y: auto;
+}
+
+@keyframes fadeIn {
+   from {
+      opacity: 0
+   }
+
+   to {
+      opacity: 1
+   }
+}
+
+@keyframes scaleIn {
+   from {
+      transform: scale(0.93)
+   }
+
+   to {
+      transform: scale(1)
+   }
+}
+
+.bar {
+   height: 6px;
+   border-radius: 4px;
+   margin-bottom: 10px;
+}
+
+.bar.positive {
+   background: #28a745;
+}
+
+.bar.neutral {
+   background: #0dcaf0;
+}
+
+.bar.negative {
+   background: #dc3545;
+}
+
+.severity-badge.high {
+   background: #dc3545;
+   color: white;
+   padding: 5px 10px;
+   border-radius: 5px;
+}
+
+.severity-badge.medium {
+   background: #ffc107;
+   color: black;
+   padding: 5px 10px;
+   border-radius: 5px;
+}
+
+.severity-badge.low {
+   background: #28a745;
+   color: white;
+   padding: 5px 10px;
+   border-radius: 5px;
+}
+
+.timeline-item {
+   background: #f7f7f7;
+   border-left: 4px solid #005eb8;
+   padding: 10px;
+   margin-bottom: 10px;
+   border-radius: 5px;
+}
+
+.timeline-item .badge.positive {
+   background: #28a745;
+}
+
+.timeline-item .badge.neutral {
+   background: #0dcaf0;
+}
+
+.timeline-item .badge.negative {
+   background: #dc3545;
+}
+
+.audit-item {
+   padding: 8px;
+   border-bottom: 1px solid #f1f1f1;
+}
+*/
+
+/* Background overlay */
+.modern-modal-overlay {
+   position: fixed;
+   inset: 0;
+   background: rgba(0, 0, 0, 0.45);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   z-index: 2000;
+   animation: fadeIn 0.25s ease-in-out;
+}
+
+/* Main modal container */
+.modern-modal {
+   background: #ffffff;
+   width: 750px;
+   max-width: 95%;
+   border-radius: 10px;
+   overflow: hidden;
+   animation: scaleIn 0.25s ease;
+   max-height: 90vh;
+   display: flex;
+   flex-direction: column;
+}
+
+/* Header */
+.modern-modal-header {
+   padding: 16px;
+   border-bottom: 1px solid #eee;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.btn-close-custom {
+   background: none;
+   border: none;
+   font-size: 20px;
+}
+
+/* Body */
+.modern-modal-body {
+   padding: 20px;
+   overflow-y: auto;
+}
+
+/* Footer */
+.modern-modal-footer {
+   padding: 15px;
+   border-top: 1px solid #eee;
+   display: flex;
+   justify-content: flex-end;
+   gap: 10px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+   from {
+      opacity: 0
+   }
+
+   to {
+      opacity: 1
+   }
+}
+
+@keyframes scaleIn {
+   from {
+      transform: scale(0.92)
+   }
+
+   to {
+      transform: scale(1)
+   }
+}
+
+/* Sentiment bars */
+.bar {
+   height: 6px;
+   border-radius: 3px;
+   margin-bottom: 12px;
+}
+
+.bar.positive {
+   background: #28a745;
+}
+
+.bar.neutral {
+   background: #0dcaf0;
+}
+
+.bar.negative {
+   background: #dc3545;
+}
+
+.bar-label {
+   font-size: 13px;
+   margin-bottom: -5px;
+}
+
+/* Severity pill */
+.severity-badge {
+   padding: 6px 12px;
+   border-radius: 6px;
+   color: #fff;
+   font-weight: bold;
+}
+
+.severity-badge.high {
+   background: #dc3545;
+}
+
+.severity-badge.medium {
+   background: #ffc107;
+   color: #000;
+}
+
+.severity-badge.low {
+   background: #28a745;
+}
+
+/* Feedback timeline */
+.timeline-item {
+   background: #f7f7f7;
+   border-left: 4px solid #0d6efd;
+   padding: 10px;
+   border-radius: 6px;
+   margin-bottom: 12px;
+}
+
+.timeline-item .time {
+   font-size: 12px;
+   color: #6c757d;
+}
+
+.timeline-item .msg {
+   margin-top: 4px;
+}
+
+.sentiment-badge {
+   margin-top: 6px;
+}
+
+.sentiment-badge.positive {
+   background: #28a745 !important;
+}
+
+.sentiment-badge.neutral {
+   background: #0dcaf0 !important;
+   color: #000;
+}
+
+.sentiment-badge.negative {
+   background: #dc3545 !important;
+}
+
+/* Audit items */
+.audit-item {
+   padding: 8px;
+   border-bottom: 1px solid #f1f1f1;
+   display: flex;
+   justify-content: space-between;
+}
