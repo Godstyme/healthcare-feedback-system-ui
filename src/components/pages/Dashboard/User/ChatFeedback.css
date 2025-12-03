@@ -1,0 +1,125 @@
+.chat-feedback-wrapper {
+   max-width: 900px;
+   margin: 0 auto;
+}
+
+/* Card wrapper */
+.chat-card {
+   background: #ffffff;
+   border-radius: 12px;
+   border: 1px solid #e1e4e9;
+   display: flex;
+   flex-direction: column;
+   height: 60vh;
+   max-height: 500px;
+}
+
+/* Chat messages area */
+.chat-window {
+   flex: 1;
+   padding: 16px;
+   overflow-y: auto;
+   background: #f7f9fc;
+}
+
+/* Chat message alignment */
+.chat-message {
+   display: flex;
+   margin-bottom: 8px;
+}
+
+.chat-message.assistant {
+   justify-content: flex-start;
+}
+
+.chat-message.user {
+   justify-content: flex-end;
+}
+
+/* Chat bubbles */
+.chat-bubble {
+   max-width: 80%;
+   padding: 10px 14px;
+   border-radius: 16px;
+   font-size: 14px;
+   line-height: 1.4;
+}
+
+.chat-message.assistant .chat-bubble {
+   background: #ffffff;
+   border: 1px solid #d7dee9;
+   color: #1f2933;
+   border-top-left-radius: 4px;
+}
+
+.chat-message.user .chat-bubble {
+   background: #0d6efd;
+   color: #ffffff;
+   border-top-right-radius: 4px;
+}
+
+/* Input area */
+.chat-input-area {
+   padding: 10px 14px 14px;
+   border-top: 1px solid #e1e4e9;
+   background: #ffffff;
+}
+
+/* Typing indicator */
+.typing-indicator {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   width: 48px;
+   height: 24px;
+}
+
+.typing-indicator span {
+   width: 6px;
+   height: 6px;
+   margin: 0 2px;
+   background: #9199b0;
+   border-radius: 50%;
+   display: inline-block;
+   animation: typing 1.2s infinite ease-in-out;
+}
+
+.typing-indicator span:nth-child(2) {
+   animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+   animation-delay: 0.4s;
+}
+
+@keyframes typing {
+
+   0%,
+   60%,
+   100% {
+      transform: translateY(0);
+      opacity: 0.4;
+   }
+
+   30% {
+      transform: translateY(-4px);
+      opacity: 1;
+   }
+}
+
+/* Quick replies for effectiveness */
+.quick-replies button {
+   font-size: 12px;
+   padding: 3px 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+   .chat-card {
+      height: 70vh;
+   }
+
+   .chat-bubble {
+      max-width: 95%;
+   }
+}

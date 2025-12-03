@@ -1,0 +1,141 @@
+.nf-wrapper {
+   min-height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background: linear-gradient(135deg,
+         rgba(0, 82, 204, 0.15),
+         rgba(0, 165, 223, 0.15));
+   position: relative;
+   overflow: hidden;
+   padding: 2rem;
+   animation: fadeIn 0.7s ease-in-out;
+}
+
+.nf-content {
+   max-width: 500px;
+   z-index: 10;
+   animation: fadeUp 1s ease-out;
+}
+
+.nf-illustration {
+   width: 220px;
+   margin-bottom: 1rem;
+   animation: float 3.5s infinite ease-in-out;
+}
+
+.nf-title {
+   font-size: 6rem;
+   font-weight: 800;
+   color: #0052cc;
+   margin: 0;
+}
+
+.nf-subtitle {
+   font-size: 1.6rem;
+   font-weight: 600;
+   color: #333;
+}
+
+.nf-desc {
+   color: #666;
+   margin-bottom: 1.5rem;
+}
+
+.nf-btn {
+   padding: 0.7rem 1.8rem;
+   font-weight: 600;
+   border-radius: 6px;
+}
+
+.floating-icons .icon {
+   position: absolute;
+   font-size: 2.8rem;
+   opacity: 0.15;
+   color: #0052cc;
+   animation: iconFloat 6s infinite linear;
+}
+
+.icon-1 {
+   top: 10%;
+   left: 5%;
+   animation-delay: 0s;
+}
+
+.icon-2 {
+   top: 20%;
+   right: 10%;
+   animation-delay: 1s;
+}
+
+.icon-3 {
+   bottom: 15%;
+   left: 15%;
+   animation-delay: 2s;
+}
+
+.icon-4 {
+   bottom: 10%;
+   right: 5%;
+   animation-delay: 3s;
+}
+
+@keyframes fadeIn {
+   from {
+      opacity: 0;
+   }
+
+   to {
+      opacity: 1;
+   }
+}
+
+@keyframes fadeUp {
+   from {
+      opacity: 0;
+      transform: translateY(25px);
+   }
+
+   to {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
+
+@keyframes float {
+   0% {
+      transform: translateY(0px);
+   }
+
+   50% {
+      transform: translateY(-10px);
+   }
+
+   100% {
+      transform: translateY(0px);
+   }
+}
+
+@keyframes iconFloat {
+   0% {
+      transform: translateY(0px) rotate(0deg);
+   }
+
+   50% {
+      transform: translateY(-15px) rotate(10deg);
+   }
+
+   100% {
+      transform: translateY(0px) rotate(0deg);
+   }
+}
+
+@media (max-width: 600px) {
+   .nf-title {
+      font-size: 4.5rem;
+   }
+
+   .nf-illustration {
+      width: 170px;
+   }
+}

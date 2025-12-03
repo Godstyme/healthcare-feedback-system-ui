@@ -5,6 +5,9 @@ import { Link } from "react-router-dom";
 import AuthService from "../../services/authService";
 import { toast } from "react-toastify";
 import { Eye, EyeOff } from "lucide-react";
+import { FcGoogle } from "react-icons/fc";
+import { FaApple, FaMicrosoft } from "react-icons/fa";
+
 
 export default function RegistrationPage() {
    const [showPassword, setShowPassword] = useState(false);
@@ -13,18 +16,12 @@ export default function RegistrationPage() {
    const fullNameRef = useRef(null);
 
    useEffect(() => {
-      if (fullNameRef.current) {
-         fullNameRef.current.focus();
-      }
-   }, []);
-
-   useEffect(() => {
+      if (fullNameRef.current) fullNameRef.current.focus();
       document.querySelector(".registration-form").classList.add("slide-in");
    }, []);
 
    const toggleShowPassword = () => setShowPassword(!showPassword);
-   const toggleShowConfirmPassword = () =>
-      setShowConfirmPassword(!showConfirmPassword);
+   const toggleShowConfirmPassword = () => setShowConfirmPassword(!showConfirmPassword);
 
    const handleSubmit = async (e) => {
       e.preventDefault();
@@ -40,12 +37,7 @@ export default function RegistrationPage() {
       }
 
       try {
-         await AuthService.register({
-            fullname: full_name,
-            email,
-            password,
-         });
-
+         await AuthService.register({ fullname: full_name, email, password });
          toast.success("Registration successful! Please login.");
       } catch (error) {
          toast.error(error.response?.data?.message || "Registration failed.");
@@ -63,7 +55,6 @@ export default function RegistrationPage() {
          <div className="registration-left">
             <form className="registration-form" onSubmit={handleSubmit}>
                <h2>Create Your Account</h2>
-
                <label htmlFor="fullname">Full Name</label>
                <input
                   id="fullname"
@@ -106,25 +97,33 @@ export default function RegistrationPage() {
                      placeholder="********"
                      required
                   />
-                  <button
-                     type="button"
-                     className="icon-btn"
-                     onClick={toggleShowConfirmPassword}
-                  >
+                  <button type="button" className="icon-btn" onClick={toggleShowConfirmPassword}>
                      {showConfirmPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                   </button>
                </div>
 
-               <button type="submit" className="register-button">
-                  Register
-               </button>
+               <button type="submit" className="register-button">Register</button>
 
-               <p className="signin-text">
+               <div className="divider">
+                  <span>or register with</span>
+               </div>
+               <div className="oauth-group">
+                  <button type="button" className="oauth-btn google">
+                     <FcGoogle size={22} /> Google
+                  </button>
+                  <button type="button" className="oauth-btn apple">
+                     <FaApple size={20} /> Apple
+                  </button>
+                  <button type="button" className="oauth-btn outlook">
+                     <FaMicrosoft size={20} /> Outlook
+                  </button>
+               </div>
+
+               <p className="signin-text mt-3">
                   Already have an account? <Link to="/login">Sign in</Link>
                </p>
             </form>
          </div>
-
          <div className="registration-right" style={rightPanelStyle}>
             <div className="registration-right-content">
                <h2>Welcome to Healthcare Feedback System</h2>
@@ -133,6 +132,7 @@ export default function RegistrationPage() {
                </p>
             </div>
          </div>
+
       </div>
    );
 }

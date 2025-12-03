@@ -106,3 +106,71 @@
       padding: 1.5rem;
    }
 }
+
+
+
+/* OAuth buttons */
+.oauth-group {
+   display: flex;
+   justify-content: space-between;
+   gap: 0.8rem;
+   margin-bottom: 1.2rem;
+}
+
+.oauth-btn {
+   flex: 1;
+   padding: 10px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 6px;
+   border-radius: 8px;
+   border: 1px solid #ccc;
+   background: #fff;
+   cursor: pointer;
+   font-weight: 600;
+   transition: 0.3s ease;
+}
+
+.oauth-btn:hover {
+   background: #f2f2f2;
+}
+
+/* Special colors */
+.oauth-btn.google {
+   border-color: #e0e0e0;
+}
+
+.oauth-btn.apple {
+   background: #000;
+   color: white;
+}
+
+.oauth-btn.outlook {
+   background: #0078d4;
+   color: white;
+}
+
+.divider {
+   text-align: center;
+   margin: 1rem 0;
+   position: relative;
+}
+
+.divider span {
+   background: white;
+   padding: 0 10px;
+   color: #777;
+   font-size: 0.9rem;
+}
+
+.divider::before {
+   content: "";
+   position: absolute;
+   top: 50%;
+   left: 0;
+   height: 1px;
+   width: 100%;
+   background: #ddd;
+   z-index: -1;
+}

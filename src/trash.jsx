@@ -3,22 +3,16 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
 
 import ProtectedRoute from "./components/ProtectedRoute";
-
-// Layouts
-import PublicLayout from "./layouts/PublicLayout";
-import AuthLayout from "./layouts/AuthLayout";
-
-// Public pages
+import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import CookieConsent from "./components/CookieConsent";
-import NotFound from "./components/NotFound";
-
-
-// Auth pages
+import Footer from "./components/Footer";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
+import CookieConsent from "./components/CookieConsent";
 
-// User pages
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import UserDashboard from "./components/pages/Dashboard/User/UserDashboard";
 import Profile from "./components/pages/Dashboard/User/Profile";
 import Feedbacks from "./components/pages/Dashboard/User/Feedbacks";
@@ -26,20 +20,16 @@ import Appointments from "./components/pages/Dashboard/User/Appointments";
 import BookAppointment from "./components/pages/Dashboard/User/BookAppointment";
 import SubmitFeedback from "./components/pages/Dashboard/User/SubmitFeedback";
 import ChatFeedback from "./components/pages/Dashboard/User/ChatFeedback";
+//admin @system.com
 
-// Admin pages
+// admin imports can go here when needed
 import AdminDashboard from "./components/pages/Dashboard/Admin/AdminDashboard";
 import ManageUsers from "./components/pages/Dashboard/Admin/ManageUsers";
-import ManageFeedbacks from "./components/pages/Dashboard/Admin/ManageFeedbacks";
 import Analytics from "./components/pages/Dashboard/Admin/Analytics";
-
-// Notifications & Toasts
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import ManageFeedbacks from "./components/pages/Dashboard/Admin/ManageFeedbacks";
 
 
 function App() {
-
   useEffect(() => {
     import('bootstrap/dist/js/bootstrap.bundle.min.js');
   }, []);
@@ -54,41 +44,37 @@ function App() {
           <Route
             path="/"
             element={
-              <PublicLayout>
+              <>
                 <CookieConsent />
+                <Navbar />
                 <Hero />
-              </PublicLayout>
+                <Footer />
+              </>
             }
           />
 
           <Route
             path="/login"
             element={
-              <AuthLayout>
+              <>
+                <Navbar />
                 <Login />
-              </AuthLayout>
+                <Footer />
+              </>
             }
           />
+
           <Route
             path="/register"
             element={
-              <AuthLayout>
+              <>
+                <Navbar />
                 <Register />
-              </AuthLayout>
+                <Footer />
+              </>
             }
           />
 
-
-          <Route path="*" element={<NotFound />} />
-
-          <Route
-            path="/user/dashboard"
-            element={
-              <ProtectedRoute>
-                <UserDashboard />
-              </ProtectedRoute>
-            }
-          />
 
           <Route
             path="/user/appointments"
@@ -98,12 +84,43 @@ function App() {
               </ProtectedRoute>
             }
           />
-
+          <Route
+            path="/user/dashboard"
+            element={
+              <ProtectedRoute>
+                <UserDashboard />
+              </ProtectedRoute>
+            }
+          />
           <Route
             path="/user/appointments/book"
             element={
               <ProtectedRoute>
                 <BookAppointment />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/user/feedbacks/submit-form"
+            element={
+              <ProtectedRoute>
+                <SubmitFeedback />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/user/feedbacks/submit"
+            element={
+              <ProtectedRoute>
+                <ChatFeedback />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/user/profile"
+            element={
+              <ProtectedRoute>
+                <Profile />
               </ProtectedRoute>
             }
           />
@@ -117,32 +134,6 @@ function App() {
             }
           />
 
-          <Route
-            path="/user/feedbacks/submit-form"
-            element={
-              <ProtectedRoute>
-                <SubmitFeedback />
-              </ProtectedRoute>
-            }
-          />
-
-          <Route
-            path="/user/feedbacks/submit"
-            element={
-              <ProtectedRoute>
-                <ChatFeedback />
-              </ProtectedRoute>
-            }
-          />
-
-          <Route
-            path="/user/profile"
-            element={
-              <ProtectedRoute>
-                <Profile />
-              </ProtectedRoute>
-            }
-          />
 
           <Route
             path="/admin/dashboard"
@@ -179,7 +170,6 @@ function App() {
               </ProtectedRoute>
             }
           />
-
         </Routes>
       </Router>
     </>

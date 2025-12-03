@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaBars, FaUser, FaHome, FaCog, FaCommentDots, FaSignOutAlt, FaCalendarAlt } from "react-icons/fa";
+import { FaBars, FaUser, FaHome, FaCog, FaCommentDots, FaSignOutAlt, FaCalendarAlt, FaRobot, FaWpforms } from "react-icons/fa";
 import authService from "../services/authService";
 import "./Sidebar.css";
 
@@ -52,7 +52,7 @@ const Sidebar = () => {
                   </Link>
                </li>
                <li>
-                  <Link to="" className="sidebar-link">
+                  <Link to="/user/appointments" className="sidebar-link">
                      <FaCalendarAlt className="me-2" /> Appointments
                   </Link>
                </li>
@@ -67,6 +67,16 @@ const Sidebar = () => {
                   </Link>
                </li>
                <li>
+                  <Link to="/user/feedbacks/submit-form" className="sidebar-link">
+                     <FaWpforms className="me-2" /> Submit Feedback
+                  </Link>
+               </li>
+               <li>
+                  <Link to="/user/feedbacks/submit" className="sidebar-link">
+                     <FaRobot className="me-2" /> Smart Feedback
+                  </Link>
+               </li>
+               <li>
                   <Link to="/user/settings" className="sidebar-link">
                      <FaCog className="me-2" /> Settings
                   </Link>
@@ -74,12 +84,15 @@ const Sidebar = () => {
 
                {/* Logout Button */}
                <li>
-                  <button
-                     onClick={handleLogout}
-                     className="sidebar-link btn text-start" style={{ color: "#fff"}}
-                  >
+                  <Link className="sidebar-link" onClick={handleLogout}>
                      <FaSignOutAlt className="me-2" /> Logout
-                  </button>
+                  </Link>
+                  {/* <button
+                     onClick={handleLogout}
+                     className="sidebar-link btn" style={{ color: "#fff"}}
+                  >
+                     <FaSignOutAlt className="me-" /> Logout
+                  </button> */}
                </li>
             </ul>
          </div>
