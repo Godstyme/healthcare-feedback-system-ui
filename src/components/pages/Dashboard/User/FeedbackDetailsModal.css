@@ -1,0 +1,137 @@
+/* Overlay */
+.modern-modal-overlay {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100vw;
+   height: 100vh;
+   background: rgba(0, 0, 0, 0.55);
+   backdrop-filter: blur(3px);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   z-index: 9999;
+   animation: fadeIn 0.3s ease forwards;
+}
+
+/* Modal container */
+.modern-modal {
+   background: #ffffff;
+   width: 90%;
+   max-width: 600px;
+   border-radius: 14px;
+   box-shadow: 0 5px 18px rgba(0, 0, 0, 0.2);
+   overflow: hidden;
+   animation: scaleIn 0.3s ease forwards;
+}
+
+/* Header */
+.modal-header-custom {
+   padding: 15px 20px;
+   background: #f5f6fa;
+   border-bottom: 1px solid #ddd;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.modal-title-custom {
+   font-size: 18px;
+   font-weight: bold;
+}
+
+.btn-close-custom {
+   border: none;
+   background: none;
+   font-size: 22px;
+   cursor: pointer;
+}
+
+/* Body */
+.modal-body-custom {
+   padding: 20px;
+}
+
+.info-block p {
+   margin-bottom: 6px;
+}
+
+.conversation-box,
+.insights-box,
+.timeline-box {
+   padding: 15px;
+   background: #f7f9fc;
+   border-radius: 10px;
+   border: 1px solid #e1e4e9;
+}
+
+.timeline-item {
+   margin-bottom: 12px;
+}
+
+.timeline-date {
+   font-size: 12px;
+   color: #666;
+}
+
+.timeline-content {
+   background: #fff;
+   padding: 10px;
+   border-radius: 8px;
+   border-left: 3px solid #007bff;
+}
+
+/* Sentiment colors */
+.sentiment-positive {
+   color: #28a745;
+}
+
+.sentiment-neutral {
+   color: #ffc107;
+}
+
+.sentiment-negative {
+   color: #dc3545;
+}
+
+/* Severity colors */
+.severity-low {
+   color: #28a745;
+}
+
+.severity-moderate {
+   color: #ffc107;
+}
+
+.severity-high {
+   color: #dc3545;
+   font-weight: bold;
+}
+
+/* Footer */
+.modal-footer-custom {
+   padding: 15px;
+   border-top: 1px solid #ddd;
+   background: #f5f6fa;
+}
+
+/* Animations */
+@keyframes fadeIn {
+   from {
+      opacity: 0;
+   }
+
+   to {
+      opacity: 1;
+   }
+}
+
+@keyframes scaleIn {
+   from {
+      transform: scale(0.8);
+   }
+
+   to {
+      transform: scale(1);
+   }
+}
